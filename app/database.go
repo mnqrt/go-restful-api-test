@@ -1,7 +1,7 @@
 package app
 
 import (
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
@@ -10,8 +10,11 @@ import (
 
 // NewDB initializes the database connection using GORM
 func NewDB() *gorm.DB {
-	dsn := "root:@tcp(localhost:3306)/go_restful_api?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+	// Correct DSN format for GORM
+	dsn := "host=localhost user=postgres password=12345 dbname=belajargo port=5432 sslmode=disable TimeZone=Asia/Jakarta"
+
+	// Use the correct PostgreSQL driver
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info), // Logging SQL queries
 	})
 	if err != nil {

@@ -7,7 +7,7 @@ package mocks
 import (
 	reflect "reflect"
 
-	v2 "github.com/gofiber/fiber/v2"
+	fiber "github.com/gofiber/fiber/v2"
 	gomock "github.com/golang/mock/gomock"
 )
 
@@ -35,7 +35,7 @@ func (m *MockCategoryController) EXPECT() *MockCategoryControllerMockRecorder {
 }
 
 // Create mocks base method.
-func (m *MockCategoryController) Create(c *v2.Ctx) error {
+func (m *MockCategoryController) Create(c *fiber.Ctx) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Create", c)
 	ret0, _ := ret[0].(error)
@@ -49,7 +49,7 @@ func (mr *MockCategoryControllerMockRecorder) Create(c interface{}) *gomock.Call
 }
 
 // Delete mocks base method.
-func (m *MockCategoryController) Delete(c *v2.Ctx) error {
+func (m *MockCategoryController) Delete(c *fiber.Ctx) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Delete", c)
 	ret0, _ := ret[0].(error)
@@ -63,7 +63,7 @@ func (mr *MockCategoryControllerMockRecorder) Delete(c interface{}) *gomock.Call
 }
 
 // FindAll mocks base method.
-func (m *MockCategoryController) FindAll(c *v2.Ctx) error {
+func (m *MockCategoryController) FindAll(c *fiber.Ctx) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindAll", c)
 	ret0, _ := ret[0].(error)
@@ -77,7 +77,7 @@ func (mr *MockCategoryControllerMockRecorder) FindAll(c interface{}) *gomock.Cal
 }
 
 // FindById mocks base method.
-func (m *MockCategoryController) FindById(c *v2.Ctx) error {
+func (m *MockCategoryController) FindById(c *fiber.Ctx) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindById", c)
 	ret0, _ := ret[0].(error)
@@ -91,7 +91,7 @@ func (mr *MockCategoryControllerMockRecorder) FindById(c interface{}) *gomock.Ca
 }
 
 // Update mocks base method.
-func (m *MockCategoryController) Update(c *v2.Ctx) error {
+func (m *MockCategoryController) Update(c *fiber.Ctx) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Update", c)
 	ret0, _ := ret[0].(error)

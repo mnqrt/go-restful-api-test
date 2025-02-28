@@ -45,7 +45,7 @@ func (service *CategoryServiceImpl) Update(ctx context.Context, request web.Cate
 		return web.CategoryResponse{}, err
 	}
 
-	category, err := service.CategoryRepository.FindById(ctx, request.Id)
+	category, err := service.CategoryRepository.FindById(ctx, int(request.Id))
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		return web.CategoryResponse{}, exception.NewNotFoundError("Category not found")
 	} else if err != nil {
